@@ -1,4 +1,9 @@
 #!/bin/bash
+if [ -L "webminidisc" ]; then
+    echo "Erreur: webminidisc ne doit pas être un lien symbolique pour la compilation."
+    echo "Utilisez une copie réelle du renderer (ou un sous-module initialisé)."
+    exit 1
+fi
 if [ -d "renderer" ]; then
     echo "Renderer is present. It won't be rebuilt"
     exit

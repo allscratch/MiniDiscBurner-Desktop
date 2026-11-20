@@ -11,7 +11,7 @@ Le projet se compose de deux parties :
 - `webminidisc/` : sous-module contenant le renderer (le fork `MiniDiscBurner`).
 - `src/` : le code Electron (accès USB natif, fenêtre, encodeur local, réglages).
 
-Dans cette copie locale, `webminidisc` est un lien symbolique vers `../renderer`. Pour un clonage depuis GitHub, le sous-module pointe vers `https://github.com/allscratch/MiniDiscBurner.git`.
+Pour un clonage depuis GitHub, le sous-module pointe vers `https://github.com/allscratch/MiniDiscBurner.git`. Pour une copie locale sans dépôt distant, copie simplement le dossier `renderer/` dans `webminidisc/` (un lien symbolique **ne fonctionne pas** avec le script de build, qui supprime `../renderer`).
 
 ```bash
 npm i --legacy-peer-deps
