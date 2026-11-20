@@ -9,3 +9,4 @@ EKBROOTS.DES
 **/node_modules
 **/dist
 **/*.wme
+.DS_Store
