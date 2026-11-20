@@ -26,12 +26,11 @@ export const CHANGELOG: ChangelogVersionInjection[] = [
     {
         before: 'Version 1.5.0',
         entry: {
-            name: 'ElectronWMD 0.5.0-1.5.0',
+            name: 'MiniDiscBurner 1.0.0',
             contents: [
-                "Add support for Sony Network Walkman devices",
-                "Add support for running a local instance of the Sony ATRAC encoder",
-                "Fix stability issues on HiMD devices",
-                "Overhauled settings - moved ElectronWMD settings to the main settings dialog",
+                "Fork personnel basé sur ElectronWMD 0.5.4 et Web MiniDisc Pro 1.6.2",
+                "Interface en français et nouvelle identité visuelle",
+                "Toutes les fonctionnalités de Web MiniDisc Pro conservées",
             ],
         }
     }

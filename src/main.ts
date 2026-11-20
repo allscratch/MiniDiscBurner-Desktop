@@ -16,6 +16,8 @@ import { EKBROOTS } from 'networkwm-js/dist/encryption';
 import { Mutex } from 'async-mutex';
 import { WebUSBInterop } from './wusb-interop';
 
+app.setName('MiniDiscBurner');
+
 const getOfRenderer = (...p: string[]) => path.join(__dirname, '..', 'renderer', ...p);
 
 async function ewmdOpenDialog(window: BrowserWindow, filters: FileFilter[], directory?: boolean){
@@ -164,7 +166,7 @@ function setupEncoder() {
         let tempDir = '';
         if ( os.platform() === 'darwin') {
             const homeDir = app.getPath('home');
-            tempDir = path.join(homeDir, 'Library','Caches','ElectronWMD');
+            tempDir = path.join(homeDir, 'Library','Caches','MiniDiscBurner');
         } else {
             tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'atracenc'));
         }
@@ -204,7 +206,7 @@ async function createWindow() {
     await integrate(window);
     window.setMenuBarVisibility(false);
     await window.loadURL('sandbox://app/index.html');
-    window.setTitle('Electron WMD');
+    window.setTitle('MiniDiscBurner');
 
     const store = new Store();
 

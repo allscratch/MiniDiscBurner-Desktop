@@ -20,7 +20,7 @@ function closeAll(){
     process.exit();
 }
 function main() {
-    console.log("ElectronWMD's MacOS SCSI intermediate server by asivery");
+    console.log("MiniDiscBurner's MacOS SCSI intermediate server (basé sur ElectronWMD d'asivery)");
     console.log("Starting up...");
     console.log(`Base dir: ${workDir}`);
     console.log(`Socket path: ${socketName}`);
