@@ -22,6 +22,8 @@ npm run dist     # Linux + Windows (x64)
 
 Après une modification du renderer, supprime le dossier `renderer/` généré avant de relancer le build.
 
+Les DMG livrés dans `build/` contiennent une application **signée ad hoc** (signature locale, pas de certificat Developer ID). Si macOS refuse de l'ouvrir, retire le quarantainage : `xattr -d com.apple.quarantine /Volumes/MiniDiscBurner/MiniDiscBurner.app`.
+
 ## macOS
 
 ```bash
