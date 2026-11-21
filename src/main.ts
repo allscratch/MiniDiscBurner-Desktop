@@ -29,7 +29,7 @@ async function ewmdOpenDialog(window: BrowserWindow, filters: FileFilter[], dire
 function reload(window: BrowserWindow){
     // AppImages do not restart correctly
     if (app.isPackaged && process.env.APPIMAGE) {
-        dialog.showMessageBoxSync(window, { message: "This is an AppImage. Electron has a bug where AppImages cannot restart. Please restart the app manually" });
+        dialog.showMessageBoxSync(window, { message: "Ceci est une AppImage. Electron ne peut pas redémarrer les AppImages correctement. Veuillez redémarrer l’application manuellement." });
     }
     app.relaunch();
     app.exit();
@@ -104,8 +104,8 @@ function setupSettings(window: BrowserWindow) {
             state: 0,
             async handleChange() {
                 const resp = await prompt({
-                    title: 'Keyring Import',
-                    label: 'Please enter the keyring string below',
+                    title: 'Import du trousseau',
+                    label: 'Veuillez saisir la chaîne du trousseau ci-dessous',
                     inputAttrs: {
                         type: 'text',
                     }
@@ -118,7 +118,7 @@ function setupSettings(window: BrowserWindow) {
                     rawData = Uint8Array.from(atob(resp), e => e.charCodeAt(0));
                     importKeys(rawData);
                 }catch(ex){
-                    dialog.showMessageBoxSync(window, { message: 'Keyring import failed.' });
+                    dialog.showMessageBoxSync(window, { message: 'L’import du trousseau a échoué.' });
                     Object.keys(EKBROOTS).forEach((e: any) => EKBROOTS[e] = backup[e]); 
                     return;
                 }
